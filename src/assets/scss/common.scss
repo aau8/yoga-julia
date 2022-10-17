@@ -83,24 +83,54 @@
 	// }
 
     @media (max-width: $mobile-l) {
-        margin: 50px 0;
+        padding: 50px 0;
     }
 }
 //========================================================================================================================================================
 
+// Пунктирная линия внизу раздела
+.has-separator {
+	position: relative;
+	z-index: 2;
+
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%, 50%);
+		max-width: 970px;
+		width: 100%;
+		height: 16px;
+		background: center/contain no-repeat url('../img/separator.png');
+	}
+}
 
 // Шапка раздела
 .s-header {
-    margin-bottom: 40px;
+	text-align: center;
+    margin-bottom: 50px;
 
     @media (max-width: $mobile-l) {
-        margin-bottom: 30px;
+        margin-bottom: 32px;
     }
 }
 
 .s-header__title {
 	font-size: 35px;
 	font-weight: 700;
+
+	@media (max-width: $tablet) {
+		font-size: 30px;
+	}
+
+	@media (max-width: 600px) {
+		font-size: 26px;
+	}
+
+	@media (max-width: $mobile-l) {
+		font-size: 22px;
+	}
 }
 
 // .s-header__subtitle {

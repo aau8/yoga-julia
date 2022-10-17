@@ -1,0 +1,88 @@
+.safe {
+
+}
+
+.safe__container {
+
+}
+
+.safe__body {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px 50px;
+
+	@media (max-width: 800px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media (max-width: 550px) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.safe__block {
+
+	& > * {
+
+		&:not(:last-child) {
+			margin-bottom: 32px;
+		}
+	}
+}
+
+.safe__column {
+	max-width: 280px;
+
+	@media (max-width: 550px) {
+		max-width: none;
+	}
+}
+
+.safe__title {
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.safe__list {
+	font-size: 14px;
+	margin-top: 20px;
+
+	& > * {
+
+		&:not(:last-child) {
+			// margin-bottom: 8px;
+		}
+	}
+}
+
+.safe__item {
+	position: relative;
+	// padding-left: 28px;
+	line-height: lhperc(14, 25);
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 7px;
+		left: -28px;
+		width: 12px;
+		aspect-ratio: 1 / 1;
+		background: center/contain no-repeat url('../img/point-mark.png');
+	}
+
+	@media (max-width: $container-width + px) {
+		padding-left: 14px;
+
+		&::before {
+			left: -14px;
+		}
+	}
+
+	@media (max-width: 550px) {
+		padding-left: 22px;
+
+		&::before {
+			left: 0;
+		}
+	}
+}

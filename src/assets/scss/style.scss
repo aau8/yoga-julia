@@ -5,9 +5,8 @@
 
 // ========== ШРИФТЫ ==========
 
-// @include font('Gilroy', normal, 400, '../resources/fonts/Gilroy/Gilroy-Regular.woff2');
-// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400...800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 
 
 // ========== КОНЕЦ ШРИФТЫ ==========
@@ -59,7 +58,7 @@ $mobile-s: 330px;
 $hide-menu: $tablet;
 
 // Прочее
-$ff-main: sans-serif;
+$ff-main: 'Montserrat', sans-serif;
 $tr: .3s;
 
 // ========== КОНЕЦ ПЕРЕМЕННЫЕ ==========
@@ -118,7 +117,7 @@ body {
 // Контейнер
 [class*="__container"] {
     @if ($max-width-container > 0) {
-        max-width: $max-width-container;
+        max-width: $max-width-container + px;
         box-sizing: content-box;
         margin: 0 auto;
     }
@@ -177,6 +176,8 @@ body {
 // Секции
 @import "./sections/header";
 @import "./sections/main";
+@import "./sections/main-offer";
+@import "./sections/safe";
 @import "./sections/footer";
 
 

@@ -12,6 +12,7 @@
 }
 
 .main__title {
+
 }
 
 .main__slogan {
@@ -36,17 +37,93 @@
 }
 
 .main__body {
-
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .main-age {
+	position: relative;
+	z-index: 1;
+	max-width: 240px;
+	width: 100%;
+	aspect-ratio: 1 / 1;
 
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		top: 51%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 120%;
+		aspect-ratio: 1 / 1;
+		background: center/contain no-repeat url('../img/round-points.png');
+	}
 }
 
 .main-age__circle {
-
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #EF7F1A;
+	border-radius: 50%;
+	border: 10px solid $light;
+	box-shadow: 0 0 10px rgba(0,0,0,.2);
+	overflow: hidden;
 }
 
 .main-age__text {
+    width: 82%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 23px;
+	font-weight: 500;
+	line-height: lhperc(23, 35);
+	color: $light;
+	text-align: center;
+	text-transform: uppercase;
 
+	& span {
+		font-size: 45px;
+		line-height: lhperc(45, 35);
+		margin-top: 8px;
+	}
+}
+
+.main-advant {
+	max-width: 380px;
+
+	& > * {
+
+		&:not(:last-child) {
+			margin-bottom: 32px;
+		}
+	}
+}
+
+.main-advant__item {
+	position: relative;
+	font-size: 14px;
+	padding-left: 50px;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 35px;
+		aspect-ratio: 1 / 1;
+		background: center/contain no-repeat url('../img/tick-blue.png');
+	}
+}
+
+.main__img {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
 }
