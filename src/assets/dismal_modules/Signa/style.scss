@@ -1,0 +1,35 @@
+.signa {
+    width: 100%;
+    transition: 0.4s;
+}
+
+.signa__body {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	text-align: center;
+	border-top: 1px solid #cecece;
+	background: #fff;
+    padding: 12px 24px;
+}
+
+.signa__text {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+    opacity: 0.7;
+
+	& span {
+		font-weight: 600;
+	}
+
+	& a {
+		color: inherit;
+		text-decoration: underline;
+		transition: 0.2s;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

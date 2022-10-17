@@ -1,0 +1,184 @@
+@use "sass:math";
+
+@import "./mixins";
+
+
+// ========== ШРИФТЫ ==========
+
+// @include font('Gilroy', normal, 400, '../resources/fonts/Gilroy/Gilroy-Regular.woff2');
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400...800&display=swap');
+
+
+// ========== КОНЕЦ ШРИФТЫ ==========
+
+
+// ========== ПЕРЕМЕННЫЕ ==========
+
+// Цвета
+$text-primary: #000;
+// $text-second: brig-color($text-primary, .7);
+// $text-label: #BDBDBD;
+$accent: #FF5A00;
+$light: #fff;
+$dark: #3A3A3A;
+
+// Задний фон разделов
+$frame-blue: #B0FAFF;
+$frame-orange: $accent;
+$frame-yellow: #FFF38E;
+$frame-peach: #FFCC67;
+
+// Обводка
+$border-line: #cecece;
+
+// Радиусы
+$radius-s: 4px;
+$radius-l: 30px;
+
+// Текстовые поля
+$input-placeholder: brig-color(#000, .3);
+
+// Уведомления
+$error: #EB5757;
+
+// Значения отзывчивости
+$min-width: 320px;
+$max-width: 1920px;
+$max-width-container: 1080;
+$container-padding: 48;
+$container-width: $max-width-container + $container-padding;
+
+// Разрешения экранов
+$laptop-l: 1500px;
+$laptop: 1100px;
+$tablet: 800px;
+$mobile-l: 450px;
+$mobile-m: 390px;
+$mobile-s: 330px;
+$hide-menu: $tablet;
+
+// Прочее
+$ff-main: sans-serif;
+$tr: .3s;
+
+// ========== КОНЕЦ ПЕРЕМЕННЫЕ ==========
+
+
+// ========== ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ ==========
+
+:root {
+	--container-padding: #{math.div($container-padding, 2) + 'px'};
+	--container-width: #{$container-width + 'px'};
+}
+
+// ========== КОНЕЦ ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ ==========
+
+
+
+
+// Сброс CSS
+@import "./reset";
+
+html {
+    min-width: $min-width;
+
+	&.is-lock {
+
+		& body {
+			overflow: hidden;
+			touch-action: none;
+		}
+	}
+}
+
+body {
+	font-family: $ff-main;
+	font-size: 16px;
+	font-weight: 400;
+	color: $text-primary;
+	line-height: 1.2;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    & > .content {
+        flex: 1 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+// Контейнер
+[class*="__container"] {
+    @if ($max-width-container > 0) {
+        max-width: $max-width-container;
+        box-sizing: content-box;
+        margin: 0 auto;
+    }
+    @if ($container-padding > 0) {
+        padding: 0 var(--container-padding);
+    }
+
+	@media (max-width: $tablet) {
+		--container-padding: 30px;
+	}
+
+    @media (max-width: $mobile-l) {
+		--container-padding: 20px;
+    }
+
+    @media (max-width: $mobile-m) {
+		--container-padding: 16px;
+    }
+}
+
+
+
+
+// ========== БИБЛИОТЕКИ ==========
+
+// @import "./libs/swiper";
+// @import "./libs/lightgallery";
+// @import "./libs/rangeslider";
+
+// ========== КОНЕЦ БИБЛИОТЕКИ ==========
+
+
+
+// ========== ПОДКЛЮЧЕНИЕ ФАЙЛОВ ==========
+
+// Базовые стили, шаблоны, заготовки
+@import "./base";
+
+
+// Общие стили проекта
+@import "./common";
+
+
+// Компоненты
+// @import "./components/";
+
+
+// Карточки
+// @import "./components/cards/";
+
+
+// Модальные окна
+// @import "./components/modals/";
+
+
+// Секции
+@import "./sections/header";
+@import "./sections/main";
+@import "./sections/footer";
+
+
+// Стили для отдельных страниц
+// @import "./pages/";

@@ -1,0 +1,13 @@
+.header__area {
+
+	&.is-fixed {
+		position: fixed;
+		transition: transform $tr;
+		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+		&.is-show {
+			transform: translateY(100%);
+		}
+	}
+}
+

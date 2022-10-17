@@ -1,0 +1,60 @@
+{
+	"name": "dismal-laravel-mix",
+	"version": "1.0.0",
+	"description": "",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "npx mix watch --mix-config=./config/laravel.mix.cjs",
+		"prod": "npx mix -p --mix-config=./config/laravel.mix.cjs && npm run html:prettier",
+		"sprite": "npx mix --mix-config=./config/sprite.mix.cjs",
+		"html:prettier": "npx prettier --write ./prod/**/*.html !./prod/index.html",
+		"deploy": "gulp ftp",
+		"prod:deploy": "npm run prod && gulp ftp",
+		"zip": "npm run prod && gulp zip"
+	},
+	"author": "Artem Ugryumov",
+	"license": "ISC",
+	"browserslist": [
+		"extends @wordpress/browserslist-config"
+	],
+	"babel": {
+		"presets": [
+			"@babel/preset-env"
+		]
+	},
+	"devDependencies": {
+		"@wordpress/browserslist-config": "^4.1.2",
+		"browser-sync": "^2.27.10",
+		"browser-sync-webpack-plugin": "^2.3.0",
+		"clean-webpack-plugin": "^4.0.0",
+		"css-loader": "^6.7.1",
+		"csso-webpack-plugin": "^2.0.0-beta.3",
+		"del": "^7.0.0",
+		"filename-regex": "^2.0.1",
+		"gulp": "^4.0.2",
+		"gulp-zip": "^5.1.0",
+		"html-minifier": "^4.0.0",
+		"html-webpack-plugin": "^5.5.0",
+		"laravel-mix": "^6.0.49",
+		"laravel-mix-nunjucks": "^1.2.2",
+		"laravel-mix-replace-in-file": "^0.1.0",
+		"mini-css-extract-plugin": "^2.6.1",
+		"mini-svg-data-uri": "^1.4.4",
+		"mix-html-builder": "^0.8.0",
+		"nunjucks-render-loader": "^0.0.2",
+		"postcss": "^8.4.16",
+		"postcss-import": "^15.0.0",
+		"postcss-loader": "~3.0.0",
+		"posthtml-include": "^1.7.4",
+		"resolve-url-loader": "^5.0.0",
+		"sass": "^1.54.9",
+		"sass-loader": "^12.6.0",
+		"svg-spritemap-webpack-plugin": "^4.5.0",
+		"vinyl-ftp": "^0.6.1"
+	},
+	"dependencies": {
+		"swiper": "^8.3.2",
+		"wnumb": "^1.2.0"
+	}
+}

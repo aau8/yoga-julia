@@ -1,0 +1,70 @@
+// Поле ввода
+.tf {
+	--padding-side: 20px;
+	--height: 50px;
+
+    position: relative;
+    width: 100%;
+
+    &.not-empty,
+	&.is-focus,
+	&.not-empty:has(textarea),
+	&.is-focus:has(textarea) {
+
+        & .tf__label {
+            top: 0;
+            transform: translate(-16%, 0) scale(0.7);
+        }
+    }
+
+    &:has(textarea) {
+		--height: 80px;
+
+		& .tf__field textarea {
+			padding-top: 16px;
+		}
+
+		& .tf__label {
+			top: 14px;
+			transform: translate(0, 0);
+		}
+    }
+}
+
+.tf__field {
+    position: relative;
+    width: 100%;
+	height: var(--height);
+    display: flex;
+    align-items: center;
+    background: none;
+
+	&.has-error {
+
+		&::after {
+			content: attr(data-message);
+			display: inline-block;
+			font-size: 12px;
+			margin-top: 6px;
+			color: $error;
+		}
+	}
+}
+
+.tf__field input,
+.tf__field textarea {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    padding: 0 var(--padding-side);
+}
+
+.tf__label {
+    position: absolute;
+    top: 50%;
+    left: var(--padding-side);
+    transform: translate(0, -50%);
+    display: inline-block;
+    pointer-events: none;
+    transition: $tr;
+}

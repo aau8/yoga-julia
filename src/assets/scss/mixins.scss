@@ -1,0 +1,143 @@
+// ========== ШРИФТЫ ==========
+
+@mixin font($fname, $fstyle, $fweight, $furl_woff2){
+    @font-face{
+        font-family: $fname;
+        font-style: $fstyle;
+        font-weight: $fweight;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url($furl_woff2) format('woff2');
+    }
+}
+// ========== КОНЕЦ ШРИФТЫ ==========
+
+
+
+
+// ========== ЦВЕТ ==========
+
+// Генерирует цвет по указанной яркости
+@function brig-color($color, $brightness: 0) {
+    @if $brightness == 'hover' {
+        @return adjust-color($color, $lightness: -3%);
+    }
+    @if $brightness == 'active' {
+        @return adjust-color($color, $lightness: -6%);
+    }
+
+    @return adjust-color($color, $lightness: 100% - ($brightness * 100%));
+}
+
+// Создать цвет rgba из hex
+@function create-rgba($color, $opacity) {
+    @return adjust-color($color, $alpha: -1 + $opacity);
+}
+// ========== КОНЕЦ ЦВЕТ ==========
+
+
+
+
+// Строгий размер элемента
+@mixin strictSize( $size ) {
+	min-width: $size;
+	width: $size;
+	height: $size;
+}
+
+
+
+
+// ========== ЕДИНИЦЫ ИЗМЕРЕНИЯ ==========
+
+// Percent
+@function percent($px, $from) {
+	$result: math.div($px, $from) * 100%;
+	@return $result;
+}
+// REM
+@function rem($px) {
+	$result: math.div($px, 16) + rem;
+	@return $result;
+}
+// EM
+@function em($px, $current: 16) {
+	$result: math.div($px, $current) + em;
+	@return $result;
+}
+
+// line-height в px переводит в %
+@function lhperc($font-size, $line-height-px) {
+    @return calc(round(calc($line-height-px / $font-size) * 10) / 10);
+}
+
+// Адаптивный размер
+@mixin resVal($property, $minSize, $maxSize, $minScreen, $maxScreen) {
+    @media (min-width: #{$minScreen}px) and (max-width: #{$maxScreen}px) {
+        #{$property}: calc( (100vw - #{$minScreen}px)/(#{$maxScreen} - #{$minScreen}) * (#{$maxSize} - #{$minSize}) + #{$minSize}px);
+    }
+}
+
+// Адаптивный размер только с максимальным медиа запросом
+@mixin resValNotMinWidth($property, $minSize, $maxSize, $minScreen, $maxScreen) {
+    @media (max-width: #{$maxScreen}px) {
+        #{$property}: calc( (100vw - #{$minScreen}px)/(#{$maxScreen} - #{$minScreen}) * (#{$maxSize} - #{$minSize}) + #{$minSize}px);
+    }
+}
+// ========== КОНЕЦ ЕДИНИЦЫ ИЗМЕРЕНИЯ ==========
+
+
+
+
+// ========== ЭЛЕМЕНТЫ ==========
+
+// Скроллбар
+@mixin scrollbar($width: 16px, $height: 100%, $thumb: #cecece, $track: transparent) {
+    &::-webkit-scrollbar {
+        width: $width;
+        height: $height;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $track;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $thumb;
+    }
+}
+
+// Выделение контента на сайте
+@mixin selection {
+    $prefixes: ':' ':-moz-';
+    @each $prefix in $prefixes {
+        :#{$prefix}selection {
+            @content;
+        }
+    }
+}
+
+// Плейсхолдер
+@mixin placeholder {
+    $placeholders: ':moz' ':webkit-input' '-moz' '-ms-input';
+    @each $placeholder in $placeholders {
+        &:#{$placeholder}-placeholder {
+            @content;
+        }
+    }
+}
+
+// Иконка загрузки
+@mixin loader {
+    content: "";
+    position: relative;
+    width: 1em;
+    height: 1em;
+    display: block;
+    border: 2px solid #cecece;
+    border-radius: 50%;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    animation: spinAround 500ms infinite linear;
+}
+// ========== КОНЕЦ ЭЛЕМЕНТЫ ==========
