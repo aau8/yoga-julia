@@ -1,0 +1,56 @@
+.whatdo {
+	position: relative;
+}
+
+.whatdo__body {
+	text-align: center;
+	margin-top: 70px;
+
+	@media (max-width: $tablet) {
+		margin-top: 50px;
+	}
+
+	@media (max-width: $mobile-l) {
+		margin-top: 32px;
+	}
+}
+
+.whatdo__text {
+
+}
+
+.whatdo__strong {
+	font-size: 22px;
+	font-weight: 700;
+	line-height: lhperc(22, 35);
+	margin-top: 10px;
+
+	@media (max-width: $mobile-l) {
+		font-size: 18px;
+	}
+}
+
+.whatdo__ill {
+	position: absolute;
+	top: 0;
+    z-index: 2;
+    left: 50%;
+    transform: translate(-160%, -62%);
+	max-width: 410px;
+	width: 100%;
+	aspect-ratio: 1 / 1;
+
+	@media (max-width: 1000px) {
+		transform: translate(-160%, -60%);
+		max-width: 350px;
+	}
+
+	@media (max-width: 900px) {
+		transform: translate(-160%, -70%);
+		max-width: 270px;
+	}
+
+	@media (max-width: 600px) {
+		display: none;
+	}
+}

@@ -16,20 +16,32 @@
 	&.is-dark {
 		background: #3A3A3A;
 		color: $light;
-	}
-
-	&:active {
-
-	}
-
-	@media (any-hover: hover) {
-
-		&:hover {
-			--color: #{$accent};
-		}
 
 		&:active {
+			background: $accent;
+		}
 
+		@media (any-hover: hover) {
+
+			&:hover {
+				background: $accent;
+			}
+		}
+	}
+
+	&.is-active {
+		background: $accent;
+		color: $light;
+
+		&:active {
+			background: #3A3A3A;
+		}
+
+		@media (any-hover: hover) {
+
+			&:hover {
+				background: #3A3A3A;
+			}
 		}
 	}
 }

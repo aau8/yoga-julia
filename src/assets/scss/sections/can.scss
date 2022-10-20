@@ -1,0 +1,63 @@
+.can {
+	position: relative;
+	padding-bottom: 130px;
+}
+
+.can__body {
+
+}
+
+.can__gallery {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 32px;
+
+	@media (max-width: $tablet) {
+		gap: 16px;
+	}
+
+	@media (max-width: $mobile-l) {
+		gap: 8px;
+	}
+}
+
+.can__gallery-img {
+	max-width: 320px;
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	box-shadow: 0 0 25px rgba(0,0,0,.2);
+	overflow: hidden;
+}
+
+.can__gallery-vs {
+	min-width: 30px;
+	max-width: 40px;
+	height: auto;
+}
+
+.can__content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	margin-top: 32px;
+}
+
+.can__content-title {
+
+}
+
+.can__content-descr {
+	margin-top: 24px;
+}
+
+.can__arrow {
+	position: absolute;
+    top: -5%;
+    left: 50%;
+    transform: translate(60%, 0);
+    max-width: 90px;
+    width: 20%;
+}

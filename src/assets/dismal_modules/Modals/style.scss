@@ -43,17 +43,85 @@
 
 .modal__window {
     position: relative;
-    max-width: 615px;
+	min-height: 240px;
+    max-width: 440px;
     width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
     background: #fff;
-    padding: 24px;
+	border-radius: 20px;
+	box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.25);
+    padding: 40px 24px;
 }
 
 .modal-close {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 36px;
-    height: 36px;
+    top: 12px;
+    right: 12px;
+    width: 48px;
+	aspect-ratio: 1 / 1;
     transition: $tr;
+
+	& span {
+		background: $light;
+	}
+}
+
+
+.modal__header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.modal__title {
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.modal__text {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: lhperc(16, 26);
+	margin-top: 8px;
+}
+
+.modal__body {
+	max-width: 324px;
+	display: flex;
+	flex-direction: column;
+	margin: 16px auto 0;
+}
+
+.modal__form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+
+	& > * {
+
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.modal__tf,
+.modal__submit {
+	height: 50px;
+}
+
+.modal__submit {
+	border-radius: 10px;
+	margin-top: 13px;
+}
+
+.modal__approval {
+	font-size: 10px;
+	line-height: lhperc(10, 20);
+	text-align: center;
+	margin-top: 20px;
 }

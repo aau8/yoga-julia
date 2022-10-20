@@ -1,6 +1,21 @@
+.main__area {
+	position: relative;
+	z-index: 2;
+}
+
 .main {
 	padding-top: 70px;
+	margin-bottom: -70px;
 
+	@media (max-width: $tablet) {
+		padding-top: 50px;
+		margin-bottom: -40px;
+	}
+
+	@media (max-width: $mobile-l) {
+		padding-top: 30px;
+		margin-bottom: -20px;
+	}
 }
 
 .main__header {
@@ -9,10 +24,25 @@
 	align-items: center;
 	text-align: center;
 	font-size: 40px;
+
+	@media (max-width: 900px) {
+		font-size: 30px;
+	}
+
+	@media (max-width: 700px) {
+		font-size: 24px;
+	}
+
+	@media (max-width: 560px) {
+		font-size: 20px;
+	}
+
+	@media (max-width: 480px) {
+		font-size: 16px;
+	}
 }
 
 .main__title {
-
 }
 
 .main__slogan {
@@ -34,12 +64,39 @@
 			margin-bottom: 8px;
 		}
 	}
+
+	@media (max-width: $mobile-l) {
+		margin-top: 16px;
+	}
 }
 
 .main__body {
+	position: relative;
+    aspect-ratio: 1 / .45;
+	margin-top: 32px;
+
+	@media (max-width: $laptop) {
+		aspect-ratio: 1 / .55;
+	}
+
+	@media (max-width: 900px) {
+		aspect-ratio: 1 / .65;
+	}
+}
+
+.main__content {
+	position: relative;
+	z-index: 4;
+    width: 95%;
+    margin: 0 0 0 auto;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
+	justify-content: space-between;
+
+	@media (max-width: 600px) {
+		flex-direction: column;
+		margin: 0 auto;
+	}
 }
 
 .main-age {
@@ -49,17 +106,21 @@
 	width: 100%;
 	aspect-ratio: 1 / 1;
 
-	&::before {
-		content: '';
-		position: absolute;
-		z-index: -1;
-		top: 51%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 120%;
-		aspect-ratio: 1 / 1;
-		background: center/contain no-repeat url('../img/round-points.png');
+	@media (max-width: 600px) {
+		max-width: 200px;
 	}
+
+	// &::before {
+	// 	content: '';
+	// 	position: absolute;
+	// 	z-index: -1;
+	// 	top: 51%;
+	// 	left: 50%;
+	// 	transform: translate(-50%, -50%);
+	// 	width: 120%;
+	// 	aspect-ratio: 1 / 1;
+	// 	background: center/contain no-repeat url('../img/round-points.png');
+	// }
 }
 
 .main-age__circle {
@@ -97,6 +158,16 @@
 .main-advant {
 	max-width: 380px;
 
+	@media (max-width: 800px) {
+		padding-left: 32px;
+	}
+
+	@media (max-width: 600px) {
+		max-width: none;
+		padding-left: 0;
+		margin-top: 16px;
+	}
+
 	& > * {
 
 		&:not(:last-child) {
@@ -123,7 +194,20 @@
 
 .main__img {
 	position: absolute;
+	z-index: 3;
 	bottom: 0;
 	left: 50%;
 	transform: translate(-50%, 0);
+	width: 122%;
+	pointer-events: none;
+
+	@media (max-width: $container-width + px) {
+		width: 100%;
+	}
+
+	@media (max-width: 800px) {
+		position: relative;
+		left: 0;
+		transform: none;
+	}
 }

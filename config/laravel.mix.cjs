@@ -38,6 +38,7 @@ mix.sass(`${SRC_DIR}/assets/scss/style.scss`, `${PROD_DIR}/assets/css/style.css`
 // })
 
 // mix.copy([`!${SRC_DIR}/dismal_modules/**/*.html`], './prod/')
+mix.copy(`${SRC_DIR}/application.php`, './prod/')
 mix.after(() => {
 	htmlMinifier()
 })

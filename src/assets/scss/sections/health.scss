@@ -1,0 +1,35 @@
+.health__body {
+
+}
+
+.health__list {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0 20px;
+
+	@media (max-width: 800px) {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	@media (max-width: 500px) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.health-card {
+	width: 100%;
+}
+
+.health-card__img {
+	width: 100%;
+	height: auto;
+}
+
+.health-card__text {
+	line-height: lhperc(14, 20);
+	margin-top: 6px;
+
+	& b {
+		font-weight: 700;
+	}
+}

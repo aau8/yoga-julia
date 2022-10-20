@@ -1,6 +1,10 @@
 .main-offer {
-	padding-top: 48px;
+    padding-top: 64px;
 	// margin-bottom: -24px;
+
+	@media (max-width: $mobile-l) {
+		padding-top: 32px;
+	}
 }
 
 .main-offer__container {
@@ -12,17 +16,34 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	text-align: center;
 }
 
 .main-offer__title {
 	font-size: 25px;
 	font-weight: 700;
 	color: $light;
+
+	@media (max-width: $tablet) {
+		font-size: 22px;
+	}
+
+	@media (max-width: $mobile-l) {
+		font-size: 20px;
+	}
 }
 
 .main-offer__text {
 	font-size: 20px;
 	margin-top: 16px;
+
+	@media (max-width: $tablet) {
+		font-size: 18px;
+	}
+
+	@media (max-width: $mobile-l) {
+		font-size: 16px;
+	}
 }
 
 .main-offer__btn {

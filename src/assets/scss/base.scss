@@ -1,5 +1,5 @@
 // Общие стили текста
-// @import "./components/ui/text";
+@import "./components/ui/text";
 
 // Кнопки
 @import "./components/ui/buttons";
@@ -8,10 +8,10 @@
 @import "../dismal_modules/Select/style.scss";
 
 // Поля ввода
-// @import "./components/ui/textfield";
+@import "./components/ui/textfield";
 
 // Модальные окна
-// @import "../dismal_modules/Modals/style.scss";
+@import "../dismal_modules/Modals/style.scss";
 
 // Аккордеоны (Спойлеры)
 // @import "../dismal_modules/Accordions/style.scss";

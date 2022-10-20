@@ -1,0 +1,45 @@
+.faq__body {
+
+}
+
+.faq__list {
+	display: flex;
+	flex-direction: column;
+}
+
+.faq-block {
+	display: flex;
+	flex-direction: column;
+}
+
+.faq-block__title {
+	position: relative;
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	font-weight: 700;
+	color: $light;
+	padding: 8px 14px;
+	background: $accent;
+
+	&::before {
+		content: '';
+		display: inline-block;
+		min-width: 4px;
+		width: 4px;
+		aspect-ratio: 1 / 1;
+		border-radius: 50%;
+		background: $light;
+		margin-right: 8px;
+	}
+}
+
+.faq-block__content {
+	font-size: 14px;
+	background: $light;
+	padding: 12px;
+}
+
+.faq-block__text {
+
+}
