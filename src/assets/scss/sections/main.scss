@@ -109,18 +109,6 @@
 	@media (max-width: 600px) {
 		max-width: 200px;
 	}
-
-	// &::before {
-	// 	content: '';
-	// 	position: absolute;
-	// 	z-index: -1;
-	// 	top: 51%;
-	// 	left: 50%;
-	// 	transform: translate(-50%, -50%);
-	// 	width: 120%;
-	// 	aspect-ratio: 1 / 1;
-	// 	background: center/contain no-repeat url('../img/round-points.png');
-	// }
 }
 
 .main-age__circle {

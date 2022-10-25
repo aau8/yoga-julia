@@ -80,6 +80,10 @@
 .modal__title {
 	font-size: 24px;
 	font-weight: 700;
+
+	&.is-error {
+		color: $error;
+	}
 }
 
 .modal__text {

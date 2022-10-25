@@ -9,6 +9,9 @@ export default function LabelTextfield(container = document) {
 		if (input.value != '') {
 			textfield.classList.add('not-empty')
 		}
+		else {
+			textfield.classList.remove('not-empty')
+		}
 
 		input.addEventListener('focus', () => {
 			textfield.classList.add('is-focus')

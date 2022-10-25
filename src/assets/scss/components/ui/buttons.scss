@@ -19,12 +19,14 @@
 
 		&:active {
 			background: $accent;
+			border: 2px solid $light;
 		}
 
 		@media (any-hover: hover) {
 
 			&:hover {
 				background: $accent;
+				border: 2px solid $light;
 			}
 		}
 	}

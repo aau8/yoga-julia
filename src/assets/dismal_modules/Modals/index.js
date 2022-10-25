@@ -42,7 +42,7 @@ import { bodyLock, bodyUnlock } from "../Utilities.js"
  * Возможность открытия нескольких модалок
  * Закрытие/открытие модалок по таймеру
  */
-export default class Modals {
+class Modals {
 	attrs = {
 		modalId: 'data-modal-id',
 		modalCloseOnBg: 'data-close-on-bg',
@@ -60,7 +60,7 @@ export default class Modals {
 	modalShow = null
 	modalShowId = null
 	keyEsc = true
-	useHash = true
+	useHash = false
 	historyHash = !this.useHash ? false : false
 	hash = null
 
@@ -72,6 +72,10 @@ export default class Modals {
 	open(modal) {
 		if (typeof modal === 'string') {
 			modal = document.querySelector(`[${this.attrs.modalId}=${modal}]`)
+		}
+
+		if (this.modalIsShow) {
+			this.close(this.modalShow)
 		}
 
 		this.modalIsShow = true
@@ -124,7 +128,7 @@ export default class Modals {
 	// Получить модальное окно
 	get(modalName) {
 		if (typeof modalName === 'string') {
-			return this.modalList.find(e => e.getAttribute(`${this.attrs.modalId}`) === modalName) || null
+			return Array.from(this.modalList).find(e => e.getAttribute(`${this.attrs.modalId}`) === modalName) || null
 		}
 		else if (typeof modalName === 'object') {
 			return modalName.map(modalName => this.modalList.find(e => e.getAttribute(`${this.attrs.modalId}`) === modalName) || null)
@@ -142,7 +146,9 @@ export default class Modals {
 
 	// Обновить список модальных окон
 	updateModalList() {
-		this.modalList = document.querySelectorAll(`[${this.attrs.modalId}]`)
+		this.modalList = Array.from(document.querySelectorAll(`[${this.attrs.modalId}]`))
+
+		console.log(this.modalList)
 	}
 
 	// Обновить список кнопок, открывающих модальные окна
@@ -244,3 +250,5 @@ export default class Modals {
 		history[this.historyHash ? 'pushState' : 'replaceState']({}, '', href)
 	}
 }
+
+export default new Modals()
